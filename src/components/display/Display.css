@@ -1,0 +1,27 @@
+/* .display {
+  height: 80px;
+  border: none;
+  background-color: var(--calc-bg);
+  color: white;
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0 20px;
+} */
+
+.display{
+  max-width: 300px;
+  font-size: 2rem;
+  padding: 16px 24px;
+  background-color: var(--display-bg);
+  border: none;
+  border-radius: 16px;
+  box-shadow: 2px 2px 6px 1px rgba(0,0,0,0.4);
+}
+
+
+
+.display:focus, .display:focus-visible{
+  outline: none;
+}
