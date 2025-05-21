@@ -17,6 +17,20 @@ export function useCalculator() {
     }
   }
 
+  const toggleSign = () => {
+    if (display === '0') return
+    
+    if (display.charAt(0) === '-') {
+      if (display.length - 1 <= 9) {
+        setDisplay(display.substr(1))
+      }
+    } else {
+      if (display.length + 1 <= 9) {
+        setDisplay('-' + display)
+      }
+    }
+  }
+
   const inputDot = () => {
     if (waitingForOperand) {
       setDisplay('.')
@@ -74,7 +88,7 @@ export function useCalculator() {
     let resultStr = String(result)
     
     if (resultStr.includes('.')) {
-      const [integer, decimal] = resultStr.split('.')
+      const [ integer ] = resultStr.split('.')
       const maxDecimalLength = 9 - integer.length - 1
       
       if (maxDecimalLength > 0) {
@@ -92,6 +106,7 @@ export function useCalculator() {
     inputDigit,
     inputDot,
     clearAll,
+    toggleSign,
     performOperation,
     calculateResult: () => performOperation(null)
   }

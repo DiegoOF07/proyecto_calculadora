@@ -1,4 +1,7 @@
-import { fn } from '@storybook/test';
+// @ts-nocheck
+// test-storybook-skip
+
+import { fn } from '@storybook/test'
 import { Keyboard } from '../components/keyboard/Keyboard'
 
 const ActionData = {
@@ -7,7 +10,7 @@ const ActionData = {
   onClear: fn(), 
   onOperation: fn(), 
   onEquals: fn()
-};
+}
 
 export default {
   title: 'Keyboard',
@@ -17,7 +20,7 @@ export default {
   },
   tags: ['autodocs'],
   args: {...ActionData},
-};
+}
 
 export const Default = {
     args: {

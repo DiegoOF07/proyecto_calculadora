@@ -4,7 +4,7 @@ import { useCalculator } from "../../hooks/useCalculator"
 import './Calculator.css'
 
 export const Calculator = () => {
-    const { display, inputDigit, inputDot, clearAll, performOperation, calculateResult } = useCalculator();
+    const { display, inputDigit, inputDot, clearAll, toggleSign, performOperation, calculateResult } = useCalculator()
     return (
         <div className="container">
             <div className="calculator">
@@ -16,7 +16,8 @@ export const Calculator = () => {
                     onDot={inputDot}
                     onClear={clearAll}
                     onOperation={performOperation}
-                    onEquals={calculateResult} />
+                    onEquals={calculateResult}
+                    onToggleSign={toggleSign} />
             </div>
         </div>
     )
